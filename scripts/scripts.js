@@ -21,6 +21,7 @@ import loadThemeSpreadSheetConfig from './feature-flags/theme-sheet.js';
 import { decorateSpanTags } from './feature-flags/bracket-tags.js';
 import { isVideoLink } from './utils.js';
 import FEATURES from './feature-flags/features.js';
+import { applyTemplateOverlay } from './overlay-engine.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -434,6 +435,12 @@ async function loadEager(doc) {
     doc.body.dataset.breadcrumbs = true;
   }
   const main = doc.querySelector('main');
+  // snowflake overlay-eager-hook: overlay pages render via the template engine
+  // (WKND design preserved) and skip standard block decoration.
+  if (main && await applyTemplateOverlay(main)) {
+    document.body.classList.add('appear');
+    return;
+  }
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
