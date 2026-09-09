@@ -39,11 +39,9 @@ footer .footer > div:first-child p:not(:first-child) {
   color: rgb(255 255 255 / 70%);
 }
 
-/* link columns */
-footer .footer .default-content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-l);
+/* link columns (via columns block) */
+footer .footer .columns > div {
+  gap: var(--spacing-xl);
 }
 
 footer .footer h3 {
@@ -78,8 +76,7 @@ footer .footer > div:last-child {
     padding: var(--footer-padding-desktop);
   }
 
-  footer .footer .default-content-wrapper {
-    grid-template-columns: repeat(3, 1fr);
+  footer .footer .columns > div {
     gap: var(--spacing-xxl);
   }
 }
