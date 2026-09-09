@@ -29,29 +29,40 @@
  *     grep -rn  '/\* @boilerplate' styles/ blocks/   (every untouched line)
  *     grep -rc  '/\* @boilerplate' styles/ blocks/   (remaining count per file)
  */
-:root { /* @boilerplate */
-  /* colors */
-  --brand-primary: #666; /* @boilerplate */
-  --brand-secondary: #999; /* @boilerplate */
-  --background-color: white; /* @boilerplate */
-  --light-color: #f8f8f8; /* @boilerplate */
-  --dark-color: #505050; /* @boilerplate */
-  --text-color: #131313; /* @boilerplate */
-  --link-color: #3b63fb; /* @boilerplate */
-  --link-hover-color: #1d3ecf; /* @boilerplate */
-  --overlay-background-color: lightgrey; /* @boilerplate */
-  --error-color: firebrick; /* @boilerplate */
+:root {
+  /* colors — WKND Adventures palette */
+  --brand-primary: #e8651a;
+  --brand-secondary: #3d4f45;
+  --background-color: #ffffff;
+  --light-color: #f5f0e8;
+  --dark-color: #0f1a14;
+  --text-color: #0f1a14;
+  --link-color: #e8651a;
+  --link-hover-color: #c8551a;
+  --overlay-background-color: #f0ece4;
+  --error-color: firebrick;
 
-  /* semantic color aliases — map intent onto the palette above (no marker: provenance follows the target) */
-  --color-surface: var(--background-color); /* @boilerplate */
-  --color-on-surface: var(--text-color); /* @boilerplate */
-  --color-action: var(--link-color); /* @boilerplate */
-  --color-action-hover: var(--link-hover-color); /* @boilerplate */
+  /* WKND raw palette (referenced by blocks/section variants) */
+  --color-white: #ffffff;
+  --color-black: #0f1a14;
+  --color-amber: #e8651a;
+  --color-cream: #f5f0e8;
+  --color-gray-100: #f0ece4;
+  --color-gray-200: #ddd8cf;
+  --color-gray-300: #c8c2b8;
+  --color-gray-500: #7a8a80;
+  --color-gray-700: #3d4f45;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif; /* @boilerplate */
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif; /* @boilerplate */
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, monospace; /* @boilerplate */
+  /* semantic color aliases — map intent onto the palette above */
+  --color-surface: var(--background-color);
+  --color-on-surface: var(--text-color);
+  --color-action: var(--link-color);
+  --color-action-hover: var(--link-hover-color);
+
+  /* fonts — WKND Adventures typefaces */
+  --body-font-family: 'Instrument Sans', arial, sans-serif;
+  --heading-font-family: syncopate, 'Arial Narrow', arial, sans-serif;
+  --fixed-font-family: menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
   --body-font-size-xl: 22px; /* @boilerplate */
@@ -69,9 +80,10 @@
   --heading-font-size-xs: 24px; /* @boilerplate */
 
   /* line heights & weights */
-  --body-line-height: 1.6; /* @boilerplate */
-  --heading-line-height: 1.25; /* @boilerplate */
-  --heading-font-weight: 600; /* @boilerplate */
+  --body-line-height: 1.6;
+  --heading-line-height: 1.1;
+  --heading-font-weight: 700;
+  --heading-letter-spacing: 0.01em;
 
   /* space above/below text elements */
   --element-margin-top: 0.8em; /* @boilerplate */
@@ -103,35 +115,26 @@
   --max-width-site: 1200px; /* @boilerplate */
   --icon-size: 24px; /* @boilerplate */
 
-  /* buttons (primary CTA = action color; secondary = outline) */
-  --button-margin: 12px 0; /* @boilerplate */
-  --button-padding: 0.5em 1.2em; /* @boilerplate */
-  --button-border-width: 2px; /* @boilerplate */
-  --button-border-radius: 2.4em; /* @boilerplate */
-  --button-font-weight: 500; /* @boilerplate */
-  --button-line-height: 1.25; /* @boilerplate */
-  --button-background: var(--color-action); /* @boilerplate */
-  --button-hover-background: var(--color-action-hover); /* @boilerplate */
-  --button-text-color: var(--background-color); /* @boilerplate */
-  --button-disabled-background: var(--light-color); /* @boilerplate */
+  /* buttons — WKND: pill shape, Syncopate, hard offset shadow.
+     primary = dark with amber shadow; secondary = outline. */
+  --button-margin: 12px 0;
+  --button-padding: 0.75em 2em;
+  --button-border-width: 2px;
+  --button-border-radius: 9999px;
+  --button-font-family: var(--heading-font-family);
+  --button-font-weight: 700;
+  --button-letter-spacing: 0.07em;
+  --button-line-height: 1;
+  --button-background: var(--color-black);
+  --button-hover-background: var(--color-black);
+  --button-text-color: var(--color-white);
+  --button-shadow-color: var(--color-amber);
+  --button-disabled-background: var(--color-gray-300);
 
   /* nav heights */
   --nav-height: 64px; /* @boilerplate */
   --breadcrumbs-height: 34px; /* @boilerplate */
   --header-height: var(--nav-height); /* @boilerplate */
-}
-
-/* fallback fonts */
-@font-face { /* @boilerplate */
-  font-family: roboto-condensed-fallback; /* @boilerplate */
-  size-adjust: 88.82%; /* @boilerplate */
-  src: local('Arial'); /* @boilerplate */
-}
-
-@font-face { /* @boilerplate */
-  font-family: roboto-fallback; /* @boilerplate */
-  size-adjust: 99.529%; /* @boilerplate */
-  src: local('Arial'); /* @boilerplate */
 }
 
 html {
@@ -171,12 +174,13 @@ h2,
 h3,
 h4,
 h5,
-h6 { /* @boilerplate */
-  margin-top: var(--element-margin-top); /* @boilerplate, keep consistent top margin so sections/blocks line up */
-  font-family: var(--heading-font-family); /* @boilerplate */
-  font-weight: var(--heading-font-weight); /* @boilerplate */
-  line-height: var(--heading-line-height); /* @boilerplate */
-  scroll-margin: var(--spacing-xl); /* @boilerplate */
+h6 {
+  margin-top: var(--element-margin-top); /* keep consistent top margin so sections/blocks line up */
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+  scroll-margin: var(--spacing-xl);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); } /* @boilerplate */
@@ -312,47 +316,81 @@ a:hover { /* @boilerplate */
 
 /* buttons */
 a.button,
-button { /* @boilerplate */
-  box-sizing: border-box; /* @boilerplate */
-  display: inline-block; /* @boilerplate */
-  max-width: 100%; /* @boilerplate */
-  margin: var(--button-margin); /* @boilerplate */
-  border: var(--button-border-width) solid transparent; /* @boilerplate */
-  border-radius: var(--button-border-radius); /* @boilerplate */
-  padding: var(--button-padding); /* @boilerplate */
-  font-family: var(--body-font-family); /* @boilerplate */
-  font-style: normal; /* @boilerplate */
-  font-weight: var(--button-font-weight); /* @boilerplate */
-  line-height: var(--button-line-height); /* @boilerplate */
-  text-align: center; /* @boilerplate */
-  text-decoration: none; /* @boilerplate */
-  background-color: var(--button-background); /* @boilerplate */
-  color: var(--button-text-color); /* @boilerplate */
-  cursor: pointer; /* @boilerplate */
-  overflow: hidden; /* @boilerplate */
-  text-overflow: ellipsis; /* @boilerplate */
-  white-space: nowrap; /* @boilerplate */
+button {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: var(--button-margin);
+  border: var(--button-border-width) solid var(--color-black);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-family: var(--button-font-family);
+  font-style: normal;
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  box-shadow: 3px 3px 0 0 var(--button-shadow-color);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:
+    transform var(--transition-duration),
+    box-shadow var(--transition-duration),
+    background-color var(--transition-duration),
+    color var(--transition-duration);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
-button:focus { /* @boilerplate */
-  background-color: var(--button-hover-background); /* @boilerplate */
-  cursor: pointer; /* @boilerplate */
+button:focus {
+  background-color: var(--button-hover-background);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 var(--button-shadow-color);
+  cursor: pointer;
+}
+
+a.button:active,
+button:active {
+  transform: translate(0, 0);
+  box-shadow: 1px 1px 0 0 var(--button-shadow-color);
 }
 
 button:disabled,
-button:disabled:hover { /* @boilerplate */
-  background-color: var(--button-disabled-background); /* @boilerplate */
-  cursor: unset; /* @boilerplate */
+button:disabled:hover {
+  border-color: var(--button-disabled-background);
+  background-color: var(--button-disabled-background);
+  box-shadow: none;
+  transform: none;
+  cursor: unset;
 }
 
+/* accent CTA — amber fill with dark shadow (hero / primary action) */
+a.button.accent,
+button.accent {
+  background-color: var(--color-amber);
+  border-color: var(--color-amber);
+  color: var(--color-black);
+  --button-shadow-color: var(--color-black);
+}
+
+/* secondary — outline that fills on hover */
 a.button.secondary,
-button.secondary { /* @boilerplate */
-  background-color: unset; /* @boilerplate */
-  border: var(--button-border-width) solid currentcolor; /* @boilerplate */
-  color: var(--text-color); /* @boilerplate */
+button.secondary {
+  background-color: transparent;
+  border: var(--button-border-width) solid var(--color-black);
+  color: var(--color-black);
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 /* tooltip — authorable via [[tooltip]<a href="#" title="...">text</a>] bracket syntax */
