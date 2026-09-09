@@ -1,39 +1,114 @@
 @import url('./hero-tokens.css');
 
-.hero-container .hero-wrapper { /* @boilerplate */
-  max-width: unset; /* @boilerplate */
-  padding: 0; /* @boilerplate */
+.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
 }
 
-.hero { /* @boilerplate */
-  position: relative; /* @boilerplate */
-  padding: var(--hero-padding); /* @boilerplate */
-  min-height: var(--hero-min-height); /* @boilerplate */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: var(--hero-min-height);
+  padding: 0;
+  overflow: hidden;
 }
 
-.hero h1 { /* @boilerplate */
-  max-width: var(--hero-heading-max-width); /* @boilerplate */
-  margin-left: auto; /* @boilerplate */
-  margin-right: auto; /* @boilerplate */
-  color: var(--background-color); /* @boilerplate */
+/* background image row — absolutely fills the hero */
+.hero > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
 }
 
-.hero picture { /* @boilerplate */
-  position: absolute; /* @boilerplate */
-  z-index: -1; /* @boilerplate */
-  inset: 0; /* @boilerplate */
-  object-fit: cover; /* @boilerplate */
-  box-sizing: border-box; /* @boilerplate */
+.hero > div:first-child > div {
+  height: 100%;
+  margin: 0;
 }
 
-.hero img { /* @boilerplate */
-  object-fit: cover; /* @boilerplate */
-  width: 100%; /* @boilerplate */
-  height: 100%; /* @boilerplate */
+.hero picture,
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (width >= 900px) { /* @boilerplate */
-  .hero { /* @boilerplate */
-    padding: var(--hero-padding-desktop); /* @boilerplate */
+/* dark gradient overlay for legibility */
+.hero > div:first-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(15 26 20 / 20%) 0%, rgb(15 26 20 / 62%) 100%);
+}
+
+/* content row — overlaid, left-aligned, white */
+.hero > div:last-child {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width-site);
+  margin: 0 auto;
+  padding: var(--hero-padding);
+  color: var(--color-white);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+}
+
+.hero > div:last-child > div {
+  max-width: var(--hero-heading-max-width);
+}
+
+/* eyebrow (first paragraph) */
+.hero > div:last-child > div > p:first-child {
+  margin: 0 0 var(--spacing-s);
+  color: var(--color-amber);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 var(--spacing-m);
+  color: var(--color-white);
+  line-height: 1.05;
+}
+
+.hero-lead,
+.hero > div:last-child > div > p {
+  max-width: 38rem;
+  font-size: var(--body-font-size-l);
+  color: rgb(255 255 255 / 90%);
+}
+
+/* buttons: first = accent (amber), second = ghost outline */
+.hero .button-container {
+  display: inline-block;
+  margin: var(--spacing-m) var(--spacing-s) 0 0;
+}
+
+.hero .button-container:first-of-type .button {
+  background-color: var(--color-amber);
+  border-color: var(--color-amber);
+  color: var(--color-black);
+  --button-shadow-color: var(--color-black);
+}
+
+.hero .button-container:not(:first-of-type) .button {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+  --button-shadow-color: var(--color-amber);
+}
+
+.hero .button-container:not(:first-of-type) .button:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+@media (width >= 900px) {
+  .hero h1 {
+    font-size: calc(var(--heading-font-size-xxl) * 1.4);
   }
 }

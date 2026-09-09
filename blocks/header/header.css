@@ -1,11 +1,12 @@
 @import url('./header-tokens.css');
 
 /* header and nav layout */
-header .nav-wrapper { /* @boilerplate */
-  background-color: var(--background-color); /* @boilerplate */
-  width: 100%; /* @boilerplate */
-  z-index: 2; /* @boilerplate */
-  position: fixed; /* @boilerplate */
+header .nav-wrapper {
+  background-color: var(--background-color);
+  width: 100%;
+  z-index: 2;
+  position: fixed;
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 header nav { /* @boilerplate */
@@ -138,12 +139,18 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after { /* @boilerplate */
 }
 
 /* brand */
-header .nav-brand { /* @boilerplate */
-  grid-area: brand; /* @boilerplate */
-  flex-basis: var(--header-brand-width); /* @boilerplate */
-  font-size: var(--heading-font-size-s); /* @boilerplate */
-  font-weight: 700; /* @boilerplate */
-  line-height: 1; /* @boilerplate */
+header .nav-brand {
+  grid-area: brand;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+header .nav-brand a {
+  text-decoration: none;
 }
 
 header nav .nav-brand img { /* @boilerplate */
@@ -266,16 +273,23 @@ header nav .nav-sections ul > li > ul > li { /* @boilerplate */
 }
 
 /* tools */
-header nav .nav-tools { /* @boilerplate */
-  grid-area: tools; /* @boilerplate */
+header nav .nav-tools {
+  grid-area: tools;
 }
 
-header nav .nav-tools .button { /* @boilerplate */
-  margin: 0; /* @boilerplate */
-  border: none; /* @boilerplate */
-  padding: 0.5em; /* @boilerplate */
-  background: none; /* @boilerplate */
-  line-height: 0; /* @boilerplate */
+header nav .nav-tools .button {
+  margin: 0;
+  padding: 0.5em 1.4em;
+  background-color: var(--color-amber);
+  border: 2px solid var(--color-amber);
+  color: var(--color-black);
+  --button-shadow-color: var(--color-black);
+
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1;
 }
 
 /* breadcrumbs */
