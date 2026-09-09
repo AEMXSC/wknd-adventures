@@ -8,3 +8,6 @@ test/
 workers/
 _*
 tests/
+
+# Brand guidelines (source + export) — not part of the site
+docs/brand/

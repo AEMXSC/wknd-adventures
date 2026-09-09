@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WKND Adventures — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --amber:#e8651a; --ember:#c8551a; --pine:#0f1a14; --pine2:#123a2f;
+    --cream:#f5f0e8; --sand:#f0ece4; --stone:#ddd8cf; --stone2:#c8c2b8;
+    --lichen:#7a8a80; --pineshadow:#3d4f45; --snow:#ffffff;
+    --disp:'Syncopate',sans-serif; --body:'Instrument Sans',arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  @page{ size:Letter; margin:0; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{ font-family:var(--body); color:var(--pine); background:var(--snow); line-height:1.6; }
+  .page{ width:8.5in; height:11in; padding:0.9in 0.85in; position:relative; overflow:hidden; page-break-after:always; background:var(--cream); }
+  .page:last-child{ page-break-after:auto; }
+  .dark{ background:var(--pine); color:var(--cream); }
+  .kicker{ font-family:var(--disp); font-weight:700; font-size:11px; letter-spacing:.22em; color:var(--amber); text-transform:uppercase; }
+  h1.sec{ font-family:var(--disp); font-weight:700; font-size:34px; line-height:1.05; letter-spacing:.01em; text-transform:uppercase; margin:6px 0 0; color:var(--pine); }
+  h1.sec .a{ color:var(--amber); }
+  .rule{ height:2px; background:var(--stone); margin:18px 0 22px; }
+  .lead{ font-size:15px; max-width:5in; color:var(--pineshadow); }
+  .teal{ font-family:var(--disp); font-weight:700; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--pineshadow); margin:26px 0 10px; }
+  ul.list{ list-style:none; }
+  ul.list li{ position:relative; padding-left:22px; margin-bottom:11px; font-size:13.5px; }
+  ul.list li::before{ content:''; position:absolute; left:0; top:9px; width:12px; height:2px; background:var(--amber); }
+  ul.list li b{ font-weight:700; }
+  .callout{ border-radius:16px; padding:26px 28px; color:var(--snow); background:linear-gradient(135deg,var(--amber),var(--ember)); margin:22px 0 4px; }
+  .callout.dark{ background:linear-gradient(135deg,var(--pine2),var(--pine)); }
+  .callout h3{ font-family:var(--disp); font-weight:700; font-size:18px; margin-bottom:8px; }
+  .callout p{ font-size:13px; opacity:.95; }
+  .foot{ position:absolute; left:0.85in; right:0.85in; bottom:0.5in; display:flex; justify-content:space-between; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:var(--lichen); }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  .pillars{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+  .pill{ border:1.5px solid var(--amber); color:var(--amber); border-radius:9999px; padding:9px 16px; font-family:var(--disp); font-weight:700; font-size:10px; letter-spacing:.06em; text-transform:uppercase; }
+  .stmt{ font-size:16px; font-style:italic; line-height:1.7; color:var(--pine); max-width:5.6in; }
+  table.cmp{ width:100%; border-collapse:collapse; margin-top:10px; font-size:12px; }
+  table.cmp th{ text-align:left; font-family:var(--disp); font-weight:700; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--lichen); padding:0 0 8px; }
+  table.cmp td{ vertical-align:top; padding:11px 14px; border-top:1px solid var(--stone); width:50%; }
+  .yes{ color:var(--pineshadow); } .yes b{ color:#2f7d4f; }
+  .no{ color:var(--pineshadow); } .no b{ color:var(--ember); }
+  /* colour swatches */
+  .swatches{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:6px; }
+  .sw{ border:1px solid var(--stone); border-radius:14px; overflow:hidden; background:var(--snow); }
+  .sw .chip{ height:64px; }
+  .sw .meta{ padding:12px 14px; }
+  .sw .nm{ font-family:var(--disp); font-weight:700; font-size:12px; }
+  .sw .hex{ font-size:10px; color:var(--lichen); letter-spacing:.06em; margin:3px 0 6px; }
+  .sw .use{ font-size:11px; color:var(--pineshadow); }
+  /* type specimens */
+  .spec{ border:1px solid var(--stone); border-left:4px solid var(--amber); border-radius:12px; padding:16px 20px; margin-bottom:14px; background:var(--snow); }
+  .spec .lbl{ font-family:var(--disp); font-weight:700; font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--pineshadow); margin-bottom:8px; }
+  .spec .meta2{ font-size:10.5px; color:var(--lichen); margin-top:8px; }
+  .t-disp{ font-family:var(--disp); font-weight:700; font-size:40px; line-height:1.02; text-transform:uppercase; }
+  .t-head{ font-family:var(--disp); font-weight:700; font-size:26px; line-height:1.1; }
+  .t-title{ font-family:var(--disp); font-weight:400; font-size:19px; }
+  .t-body{ font-family:var(--body); font-weight:400; font-size:15px; line-height:1.6; }
+  .t-label{ font-family:var(--disp); font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+  .a{ color:var(--amber); }
+  /* components */
+  .radius-row{ display:flex; gap:22px; margin-top:6px; }
+  .rad{ text-align:left; }
+  .rad .box{ width:96px; height:70px; background:linear-gradient(135deg,var(--amber),var(--ember)); }
+  .rad .lab{ font-family:var(--disp); font-weight:700; font-size:11px; margin-top:8px; }
+  .rad .sub{ font-size:10px; color:var(--lichen); }
+  .btn{ display:inline-block; font-family:var(--disp); font-weight:700; font-size:11px; letter-spacing:.07em; text-transform:uppercase; border-radius:9999px; padding:12px 24px; border:2px solid var(--pine); }
+  .btn.primary{ background:var(--pine); color:var(--snow); box-shadow:3px 3px 0 0 var(--amber); }
+  .btn.accent{ background:var(--amber); border-color:var(--amber); color:var(--pine); box-shadow:3px 3px 0 0 var(--pine); }
+  .btn.ghost{ background:transparent; color:var(--pine); box-shadow:3px 3px 0 0 var(--amber); }
+  .card-demo{ background:var(--pine); color:var(--cream); border-radius:20px; padding:22px 24px; }
+  .card-demo h4{ font-family:var(--disp); font-weight:700; font-size:16px; margin-bottom:8px; }
+  .card-demo p{ font-size:12px; opacity:.85; }
+  /* cover */
+  .cover{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .cover .logo{ font-family:var(--disp); font-weight:700; font-size:64px; letter-spacing:.16em; color:var(--amber); }
+  .cover .sub{ font-family:var(--disp); font-weight:700; font-size:11px; letter-spacing:.34em; color:var(--cream); text-transform:uppercase; margin-top:8px; opacity:.85; }
+  .cover .big{ font-family:var(--disp); font-weight:700; font-size:40px; text-transform:uppercase; margin-top:120px; color:var(--cream); }
+  .cover .big .a{ color:var(--amber); }
+  .cover .fg{ font-style:italic; font-size:18px; color:var(--cream); margin-top:12px; opacity:.9; }
+  .cover .dash{ width:56px; height:3px; background:var(--amber); margin:26px auto; }
+  .cover .ver{ font-family:var(--disp); font-weight:700; font-size:10px; letter-spacing:.2em; color:var(--lichen); text-transform:uppercase; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page dark cover">
+  <div class="logo">WKND</div>
+  <div class="sub">Adventure · Real Life · Wild Places</div>
+  <div class="big">BRAND <span class="a">GUIDELINES</span></div>
+  <div class="fg">The Trail Manual</div>
+  <div class="dash"></div>
+  <div class="ver">Version 1.0 — September 2026</div>
+</section>
+
+<!-- 01 FOUNDATION -->
+<section class="page">
+  <div class="kicker">01 · Foundation</div>
+  <h1 class="sec">Brand at a <span class="a">Glance</span></h1>
+  <div class="rule"></div>
+  <p class="lead">WKND Adventures is an editorial outdoor publication that documents the people, routes, and moments that make the outdoors worth protecting. This guide condenses positioning, editorial guardrails, voice, and the core visual system into one reference.</p>
+  <div class="callout">
+    <h3>Bold Stories. Real Life. Wild Places.</h3>
+    <p>We write for the reader who is three weeks out and needs to know exactly what they're getting into. Every route is walked before it's written; every report carries a last-verified date. The tone is honest and field-tested — never brochure fluff, never gatekeeping.</p>
+  </div>
+  <div class="teal">Design Principles</div>
+  <ul class="list">
+    <li><b>Honest over hyped</b> — we publish the hard days, not just the summits: the bad weather, the route that didn't go, the gear that failed.</li>
+    <li><b>Field-first, not desk research</b> — specifics come from people who actually went.</li>
+    <li><b>For every level, no gatekeeping</b> — truthful difficulty ratings, welcoming to first-timers and alpinists alike.</li>
+  </ul>
+  <div class="teal">Key Characteristics</div>
+  <ul class="list">
+    <li>Photography-forward layouts built around full-bleed, dawn-and-dusk wilderness imagery.</li>
+    <li>Wide display type meets clean sans body: <b>Syncopate</b> for headlines, <b>Instrument Sans</b> for reading.</li>
+    <li>A trail-and-dusk palette — warm amber energy over deep pine, grounded in warm neutrals.</li>
+    <li>Signature hard-offset "trail-sign" buttons and generously rounded cards.</li>
+  </ul>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>01</span></div>
+</section>
+
+<!-- 02 STRATEGY -->
+<section class="page">
+  <div class="kicker">02 · Strategy</div>
+  <h1 class="sec">Market <span class="a">Positioning</span></h1>
+  <div class="rule"></div>
+  <p class="lead">WKND Adventures is a first-hand adventure publication. It replaces endless research and secondhand trip reports with verified, walked-it-ourselves guides, gear, and field journals you can actually plan around.</p>
+  <div class="teal">Positioning Statement</div>
+  <p class="stmt">For serious outdoor people who are tired of aggregated, unverified beta, WKND Adventures is the first-hand publication that replaces guesswork with ground truth — real routes, real conditions, and real gear, documented in the field and updated when the trail changes. Unlike hype-driven wanderlust feeds, we publish only what we've confirmed ourselves.</p>
+  <div class="two">
+    <div>
+      <div class="teal">Audience</div>
+      <ul class="list">
+        <li>Serious outdoor people planning multi-day routes who need exact, current beta.</li>
+        <li>Seasoned alpinists seeking detailed, honest accounts of routes they haven't done.</li>
+        <li>Independent adventurers who plan their own trips rather than outsource them.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="teal">Differentiators</div>
+      <ul class="list">
+        <li><b>First-hand, not aggregated</b> — every route completed before publication.</li>
+        <li><b>Verified &amp; dated</b> — each report carries a last-verified date.</li>
+        <li><b>Updated, not abandoned</b> — we revisit when conditions shift.</li>
+        <li><b>Honest difficulty</b> — truthful ratings, never gatekeeping.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="teal">Content Pillars</div>
+  <div class="pillars">
+    <span class="pill">Adventures</span>
+    <span class="pill">Expeditions</span>
+    <span class="pill">Destinations</span>
+    <span class="pill">Field Notes</span>
+    <span class="pill">Gear</span>
+    <span class="pill">Community</span>
+  </div>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>02</span></div>
+</section>
+
+<!-- 03 COMPLIANCE -->
+<section class="page">
+  <div class="kicker">03 · Compliance</div>
+  <h1 class="sec">Editorial <span class="a">Guardrails</span></h1>
+  <div class="rule"></div>
+  <p class="lead">Because WKND Adventures sends people into the real world — trails, water, weather, and remote places — every claim must protect the reader, the outdoors, and the publication's credibility. These guardrails are mandatory across all channels.</p>
+  <div class="teal">Non-Negotiable Rules</div>
+  <ul class="list">
+    <li><b>Walk it before you write it.</b> No route, camp, or crossing is published without a contributor completing it first.</li>
+    <li><b>Date every claim.</b> Conditions change — carry a last-verified date and revisit when the trail materially shifts. We treat outdated advice on active terrain as negligence.</li>
+    <li><b>Name the risk, skill, and conditions.</b> Encourage proper gear, training, and guides. Never frame danger as a challenge to prove.</li>
+    <li><b>Respect nature — Leave No Trace.</b> Promote low-impact travel. Never encourage off-trail damage, wildlife disturbance, or littering.</li>
+    <li><b>Be honest about difficulty.</b> Rate routes truthfully and inclusively; state the fitness, permits, and experience they require.</li>
+    <li><b>Respect people and place.</b> Honor local cultures, lands, and regulations, and ask readers to do the same.</li>
+  </ul>
+  <div class="teal">Approved vs. Prohibited Language</div>
+  <table class="cmp">
+    <tr><th>Do Say</th><th>Don't Say</th></tr>
+    <tr><td class="yes"><b>✓</b> "Best in late spring, when the snow line typically clears."</td><td class="no"><b>✗</b> "Perfect year-round — conditions guaranteed."</td></tr>
+    <tr><td class="yes"><b>✓</b> "Intermediate — some exposed scrambling; bring sturdy boots."</td><td class="no"><b>✗</b> "Anyone can do it, no experience needed."</td></tr>
+    <tr><td class="yes"><b>✓</b> "Check current conditions and permits before you go."</td><td class="no"><b>✗</b> "Just show up and go."</td></tr>
+    <tr><td class="yes"><b>✓</b> "Last verified March 2026 — trail may have changed since."</td><td class="no"><b>✗</b> "Always accurate — trusted for life."</td></tr>
+    <tr><td class="yes"><b>✓</b> "Pack out what you pack in — leave no trace."</td><td class="no"><b>✗</b> "Blaze your own trail wherever you like."</td></tr>
+  </table>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>03</span></div>
+</section>
+
+<!-- 04 VOICE -->
+<section class="page">
+  <div class="kicker">04 · Voice</div>
+  <h1 class="sec">Brand <span class="a">Voice</span></h1>
+  <div class="rule"></div>
+  <p class="lead">WKND Adventures sounds like the contributor who already walked the route — honest, prepared, and generous with the details. It respects the reader's intelligence and their safety in equal measure.</p>
+  <div class="two">
+    <div>
+      <div class="teal">Voice Attributes</div>
+      <ul class="list">
+        <li><b>Honest &amp; first-hand</b> — specifics from experience, never brochure fluff.</li>
+        <li><b>Prepared &amp; practical</b> — gear, timing, difficulty, and the next step.</li>
+        <li><b>Welcoming, not gatekeeping</b> — you belong out here, whatever your level.</li>
+        <li><b>Understated, not hyped</b> — the place is the drama; we don't manufacture it.</li>
+        <li><b>Responsible</b> — respects nature, safety, and local communities.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="teal">Style Rules</div>
+      <ul class="list">
+        <li>Write for the reader who is three weeks out from the trip.</li>
+        <li>Be specific: name the route, the season, the camp, the water source.</li>
+        <li>Break trips into gear lists, day-by-day, and conditions — never a wall of text.</li>
+        <li>Lead with the honest assessment, then the practical detail.</li>
+      </ul>
+      <div class="teal">Tone by Context</div>
+      <p style="font-size:12.5px;color:var(--pineshadow)"><b>Guides:</b> exact, practical, verified. <b>Field Notes:</b> reflective, personal, vivid. <b>Community:</b> open, inclusive, celebratory.</p>
+    </div>
+  </div>
+  <div class="callout dark">
+    <h3>Voice in one line</h3>
+    <p>"We go first, we document everything, and we update our work — so the outdoors you read about is the outdoors you'll actually find."</p>
+  </div>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>04</span></div>
+</section>
+
+<!-- 05 COLOUR -->
+<section class="page">
+  <div class="kicker">05 · Design System</div>
+  <h1 class="sec">Colour <span class="a">Palette</span></h1>
+  <div class="rule"></div>
+  <p class="lead">The palette is the trail at dusk — warm amber energy against the deep pine of a forest at last light, grounded in warm, papery neutrals that let full-bleed photography carry the page.</p>
+  <div class="teal">Primary &amp; Accent</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#e8651a"></div><div class="meta"><div class="nm">Trail Amber</div><div class="hex">#E8651A</div><div class="use">Primary. CTAs, links, accents, energy and momentum.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#c8551a"></div><div class="meta"><div class="nm">Ember</div><div class="hex">#C8551A</div><div class="use">Deep variant for hovers and high-contrast moments.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#0f1a14"></div><div class="meta"><div class="nm">Deep Pine</div><div class="hex">#0F1A14</div><div class="use">Primary dark background &amp; body text — forest at dusk.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#3d4f45"></div><div class="meta"><div class="nm">Pine Shadow</div><div class="hex">#3D4F45</div><div class="use">Secondary text and muted green accents.</div></div></div>
+  </div>
+  <div class="teal">Neutrals</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#f5f0e8"></div><div class="meta"><div class="nm">Bone</div><div class="hex">#F5F0E8</div><div class="use">Warm light background &amp; highlighted sections.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#f0ece4;border-bottom:1px solid #ddd8cf"></div><div class="meta"><div class="nm">Sand</div><div class="hex">#F0ECE4</div><div class="use">Alternate surface, subtle panels and overlays.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#7a8a80"></div><div class="meta"><div class="nm">Lichen</div><div class="hex">#7A8A80</div><div class="use">Muted labels, captions, metadata.</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ffffff;border-bottom:1px solid #ddd8cf"></div><div class="meta"><div class="nm">Snow</div><div class="hex">#FFFFFF</div><div class="use">Cards on light, text on dark backgrounds.</div></div></div>
+  </div>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>05</span></div>
+</section>
+
+<!-- 06 TYPOGRAPHY -->
+<section class="page">
+  <div class="kicker">06 · Design System</div>
+  <h1 class="sec">Typo<span class="a">graphy</span></h1>
+  <div class="rule"></div>
+  <p class="lead">The pairing balances trail-sign boldness with editorial clarity: Syncopate brings wide, deliberate energy to display and headings; Instrument Sans keeps body and labels clean and highly readable.</p>
+  <div class="spec"><div class="lbl">Display</div><div class="t-disp">Find Your <span class="a">Next</span> Trail</div><div class="meta2">Syncopate · 700 · 40–56px · 1.05 line-height · uppercase</div></div>
+  <div class="spec"><div class="lbl">Headline</div><div class="t-head">Bold Stories. Real Life.</div><div class="meta2">Syncopate · 700 · 26–34px · 1.1 line-height</div></div>
+  <div class="spec"><div class="lbl">Title</div><div class="t-title">Backcountry Basics 101</div><div class="meta2">Syncopate · 400 · 19–22px · 1.15 line-height</div></div>
+  <div class="spec"><div class="lbl">Body</div><div class="t-body">The best trips start with honest planning. Check the season, pack the right gear, and know the difficulty before you head out — then go make the most of it.</div><div class="meta2">Instrument Sans · 400 · 16–18px · 1.6 line-height</div></div>
+  <div class="spec"><div class="lbl">Label / CTA</div><div class="t-label">Explore Adventures</div><div class="meta2">Syncopate · 700 · 11–13px · 0.07em tracking · uppercase</div></div>
+  <p style="font-size:11px;color:var(--lichen);margin-top:10px;font-style:italic">Never set long body copy in Syncopate, and avoid all-caps in reading paragraphs. Reserve uppercase for display, labels, and short calls to action.</p>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>06</span></div>
+</section>
+
+<!-- 07 SHAPE & COMPONENTS -->
+<section class="page">
+  <div class="kicker">07 · Design System</div>
+  <h1 class="sec">Shape &amp; <span class="a">Components</span></h1>
+  <div class="rule"></div>
+  <p class="lead">Generous spacing and rounded, confident forms keep the brand approachable, while the signature hard-offset shadow gives every action a tactile, trail-sign snap. Let full-bleed photography carry the energy; keep structure calm so the outdoors is the hero.</p>
+  <div class="teal">Border Radius</div>
+  <div class="radius-row">
+    <div class="rad"><div class="box" style="border-radius:8px"></div><div class="lab">8px · Standard</div><div class="sub">Inputs, small controls</div></div>
+    <div class="rad"><div class="box" style="border-radius:16px"></div><div class="lab">16px · Cards</div><div class="sub">Cards &amp; panels</div></div>
+    <div class="rad"><div class="box" style="border-radius:20px"></div><div class="lab">20px · Media</div><div class="sub">Feature &amp; media tiles</div></div>
+    <div class="rad"><div class="box" style="border-radius:9999px"></div><div class="lab">Pill · Buttons</div><div class="sub">All calls to action</div></div>
+  </div>
+  <div class="teal">Spacing Scale</div>
+  <p style="font-size:12.5px;color:var(--pineshadow)"><b>4</b> tight · <b>8</b> component · <b>12</b> compact · <b>16</b> default gap · <b>24</b> card padding · <b>48</b> section spacing (px).</p>
+  <div class="teal">Core Components</div>
+  <div class="two" style="align-items:start">
+    <div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+        <span class="btn accent">Explore Adventures</span>
+        <span class="btn ghost">Read Field Notes</span>
+      </div>
+      <span class="btn primary">Find a Destination</span>
+      <p style="font-size:11.5px;color:var(--pineshadow);margin-top:14px"><b>Accent:</b> amber fill, dark label, pine shadow. <b>Primary:</b> pine fill, amber shadow. <b>Ghost:</b> outline with amber shadow. All shift on hover (shadow grows 3→5px, nudges up-left).</p>
+    </div>
+    <div class="card-demo">
+      <h4>Backcountry Basics 101</h4>
+      <p>Learn to read conditions, pack smart, and pick a route that matches your level.</p>
+    </div>
+  </div>
+  <div class="teal">Imagery &amp; Motion</div>
+  <ul class="list">
+    <li>Real, first-hand outdoor photography — dawn and golden-hour light, wide landscapes, people mid-adventure. No glossy staged stock.</li>
+    <li>Let images run full-bleed; overlay text with a soft pine-to-transparent gradient for legibility.</li>
+  </ul>
+  <div class="foot"><span>WKND Adventures Brand Guidelines · The Trail Manual</span><span>07</span></div>
+</section>
+
+<!-- CLOSING -->
+<section class="page dark cover">
+  <div class="logo">WKND</div>
+  <div class="sub">Adventure · Real Life · Wild Places</div>
+  <div class="fg" style="margin-top:90px">The Trail Manual</div>
+  <p style="font-size:14px;color:var(--cream);opacity:.85;max-width:4.6in;margin-top:12px">Made for the people who go — documenting the routes, gear, and moments that make the outdoors worth protecting.</p>
+  <div class="dash"></div>
+  <div class="ver">© 2026 WKND Adventures · Version 1.0 — September 2026</div>
+</section>
+
+</body>
+</html>
