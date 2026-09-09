@@ -13,8 +13,10 @@
   order: 0; /* @boilerplate */
 }
 
-.columns > div > .columns-img-col img { /* @boilerplate */
-  display: block; /* @boilerplate */
+.columns > div > .columns-img-col img {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-card);
 }
 
 @media (width >= 900px) { /* @boilerplate */

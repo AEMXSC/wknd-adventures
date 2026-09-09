@@ -1,22 +1,85 @@
 @import url('./footer-tokens.css');
 
-footer { /* @boilerplate */
-  background-color: var(--light-color); /* @boilerplate */
-  font-size: var(--body-font-size-xs); /* @boilerplate */
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div { /* @boilerplate */
-  margin: auto; /* @boilerplate */
-  max-width: var(--footer-max-width); /* @boilerplate */
-  padding: var(--footer-padding); /* @boilerplate */
+footer .footer > div {
+  margin: auto;
+  max-width: var(--footer-max-width);
+  padding: var(--footer-padding);
 }
 
-footer .footer p { /* @boilerplate */
-  margin: 0; /* @boilerplate */
+footer .footer p {
+  margin: 0;
 }
 
-@media (width >= 900px) { /* @boilerplate */
-  footer .footer > div { /* @boilerplate */
-    padding: var(--footer-padding-desktop); /* @boilerplate */
+footer .footer a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  color: var(--color-amber);
+}
+
+/* brand + tagline (first section) */
+footer .footer > div:first-child a {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+footer .footer > div:first-child p:not(:first-child) {
+  margin-top: var(--spacing-s);
+  max-width: 32rem;
+  color: rgb(255 255 255 / 70%);
+}
+
+/* link columns */
+footer .footer .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+}
+
+footer .footer h3 {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 55%);
+}
+
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* closing / copyright (last section) */
+footer .footer > div:last-child {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  color: rgb(255 255 255 / 55%);
+}
+
+@media (width >= 900px) {
+  footer .footer > div {
+    padding: var(--footer-padding-desktop);
+  }
+
+  footer .footer .default-content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xxl);
   }
 }

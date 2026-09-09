@@ -1,11 +1,11 @@
-/* cards design tokens — Tier 2: reference global semantics; @boilerplate marks unresolved literals */
-:root { /* @boilerplate */
-  --cards-grid-min-width: 257px; /* @boilerplate */
-  --cards-grid-gap: var(--spacing-m); /* @boilerplate */
-  --cards-card-border-width: var(--border-width-s); /* @boilerplate */
-  --cards-card-border-color: var(--border-color); /* @boilerplate */
-  --cards-card-background: var(--color-surface); /* @boilerplate */
-  --cards-card-body-margin: var(--spacing-s); /* @boilerplate */
-  --cards-image-aspect-ratio: 4 / 3; /* @boilerplate */
-  --cards-image-object-fit: cover; /* @boilerplate */
+/* cards design tokens — WKND rounded cards */
+:root {
+  --cards-grid-min-width: 280px;
+  --cards-grid-gap: var(--spacing-l);
+  --cards-card-border-width: 1px;
+  --cards-card-border-color: var(--color-gray-200);
+  --cards-card-background: var(--color-white);
+  --cards-card-body-margin: 0;
+  --cards-image-aspect-ratio: 4 / 3;
+  --cards-image-object-fit: cover;
 }
