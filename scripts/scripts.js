@@ -502,6 +502,9 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   import('./consent-check.js');
+  // snowflake overlay: load the per-template animation/interaction engine
+  // (tabs, FAQ, megamenu behavior) for overlay pages.
+  import('./delayed.js');
 }
 
 /* DA specific sidekick */
