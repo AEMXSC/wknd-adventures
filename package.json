@@ -1,8 +1,8 @@
 {
-  "name": "@adobe/aem-boilerplate",
+  "name": "wknd-adventures",
   "private": true,
-  "version": "1.1.0",
-  "description": "Starter project for Adobe Helix",
+  "version": "1.0.0",
+  "description": "WKND Adventures — AEM Edge Delivery Services site (DA + Universal Editor) on ise-boilerplate",
   "scripts": {
     "lint:js": "eslint . --ext .json,.js,.mjs",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aemdemos/ise-boilerplate.git"
+    "url": "git+https://github.com/AEMXSC/wknd-adventures.git"
   },
-  "author": "Adobe",
+  "author": "AEMXSC",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/adobe/aem-boilerplate/issues"
+    "url": "https://github.com/AEMXSC/wknd-adventures/issues"
   },
-  "homepage": "https://github.com/adobe/aem-boilerplate#readme",
+  "homepage": "https://github.com/AEMXSC/wknd-adventures#readme",
   "overrides": {
     "css-tree": "3.2.1"
   },
