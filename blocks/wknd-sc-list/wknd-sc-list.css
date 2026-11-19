@@ -14,6 +14,16 @@
   gap: var(--space-sm, 0.75rem);
 }
 
+/* WCAG AA contrast: the brand's white-on-amber tag and gray-500 body text
+   fall short at these sizes, so this block uses its darker brand pairings. */
+.wknd-sc-list .tag {
+  color: var(--color-black, #0f1a14);
+}
+
+.wknd-sc-list .utility-text-secondary {
+  color: var(--color-gray-700, #3d4f45);
+}
+
 .wknd-sc-list .paragraph-sm p,
 .wknd-sc-list .paragraph-lg p {
   margin: 0;
