@@ -1,0 +1,62 @@
+{
+  "definitions": [
+    {
+      "title": "WKND Structured Content List",
+      "id": "wknd-sc-list",
+      "model": "wknd-sc-list",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"wknd-sc-list\"><div><div><p>type</p></div><div><p>adventures</p></div></div><div><div><p>limit</p></div><div><p>12</p></div></div><div><div><p>tag</p></div><div><p></p></div></div><div><div><p>empty message</p></div><div><p></p></div></div></div>"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "wknd-sc-list",
+      "fields": [
+        {
+          "component": "select",
+          "name": "type",
+          "label": "Content type",
+          "valueType": "string",
+          "value": "adventures",
+          "options": [
+            {
+              "name": "Adventures",
+              "value": "adventures"
+            },
+            {
+              "name": "Trail alerts",
+              "value": "alerts"
+            },
+            {
+              "name": "Field notes",
+              "value": "field-notes"
+            }
+          ]
+        },
+        {
+          "component": "number",
+          "name": "limit",
+          "label": "Maximum items",
+          "valueType": "number",
+          "value": 12
+        },
+        {
+          "component": "text",
+          "name": "tag",
+          "label": "Card tag (when a record has none)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "emptyMessage",
+          "label": "Message when nothing is published",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

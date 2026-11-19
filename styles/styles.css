@@ -53,3 +53,27 @@ body > footer {
   padding: 0;
   margin: 0;
 }
+
+/* Content width and gutter for non-overlay pages (EDS-decorated sections,
+   e.g. /trip-companion). Overlay pages replace <main> and never get
+   data-section-status, so this doesn't touch them. */
+main > .section[data-section-status] > div {
+  box-sizing: border-box;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+main > .section[data-section-status] {
+  padding-block: 2rem;
+}
+
+@media (width >= 900px) {
+  main > .section[data-section-status] > div {
+    padding-inline: 2.5rem;
+  }
+
+  main > .section[data-section-status] {
+    padding-block: 3rem;
+  }
+}

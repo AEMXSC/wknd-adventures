@@ -424,6 +424,16 @@
               ]
             }
           }
+        },
+        {
+          "title": "WKND Structured Content List",
+          "id": "wknd-sc-list",
+          "model": "wknd-sc-list",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"wknd-sc-list\"><div><div><p>type</p></div><div><p>adventures</p></div></div><div><div><p>limit</p></div><div><p>12</p></div></div><div><div><p>tag</p></div><div><p></p></div></div><div><div><p>empty message</p></div><div><p></p></div></div></div>"
+            }
+          }
         }
       ]
     }
